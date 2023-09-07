@@ -1,6 +1,8 @@
 from pyray import *
 import random
 
+from raylib import KEY_R
+
 empty = -1
 O = 0
 X = 1
@@ -123,6 +125,7 @@ def find_winning_combination():
 
     return None
 
+
 # Main game loop
 while not window_should_close():
     begin_drawing()
@@ -148,6 +151,9 @@ while not window_should_close():
         if winning_combination:
             game_over = True
             winner = "X" if turn == O else "O"
+        elif all(squares[i][j] != empty for i in range(3) for j in range(3)):
+            game_over = True
+            winner = "Tie"
 
     else:
         # Display the winning combination
@@ -155,8 +161,11 @@ while not window_should_close():
             for row, col in winning_combination:
                 draw_circle(225 + 150 * col, 225 + 150 * row, 10, RED)
 
-        # Display the winner and the option to play again
-        draw_top_text("Winner is Player " + winner + ". Press R to play again.")
+        # Display the winner or tie and the option to play again
+        if winner == "Tie":
+            draw_top_text("It's a tie! Press " + str(KEY_R) + " to play again.")
+        else:
+            draw_top_text("Winner is Player " + winner + ". Press " + str(KEY_R) + " to play again.")
 
         # Check for rematch option (pressing the 'R' key)
         if is_key_pressed(KEY_R):
@@ -173,6 +182,7 @@ while not window_should_close():
 
 # Close the game window
 close_window()
+
 
 
 
