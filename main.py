@@ -464,27 +464,14 @@ close_window()
 
 
 
-
-
-
-#def get_winning_combos():
-#    rows = [[(move.row,move.col) for move in row]
-#        for row in self._current_moves]
-#    columns = [list(col) for col in zip(*rows)]
-#    first_diagonal = [row[i] for i, row in enumerate(rows)]
-#    second_diagonal = [col[j] for j, col in enumerate(reversed(columms))]
-#    return rows + columns + [first_diagonal, second_diagonal]
-
-
-
     
 
 
-#a thing that gets the mouse position and changes a square
-#a turn tracker
-#something to check if someone one
-#game over screen
-#text on top
+#a thing that gets the mouse position and changes a square (DONE)
+#a turn tracker (DONE)
+#something to check if someone one (DONE)
+#game over screen (DONE)
+#text on top (DONE)
 #the stuff on the bottom
 #local multiplayer
 #online multiplayer
@@ -492,5 +479,4 @@ close_window()
 #leaderboard
 #ADS TO MAKE MONEY
 #NFT
-#cryptomining
 #SWIFT??
